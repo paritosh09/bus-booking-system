@@ -1,0 +1,43 @@
+<div class="booking-container">
+  <h2>Book Your Ticket</h2>
+  <form (ngSubmit)="onSubmit()" class="booking-form">
+    <div class="form-group">
+      <label for="passengerName">Passenger Name:</label>
+      <input
+        type="text"
+        id="passengerName"
+        [(ngModel)]="ticket.passengerName"
+        name="passengerName"
+        placeholder="Enter your name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="seatNumber">Seat Number:</label>
+      <input
+        type="text"
+        id="seatNumber"
+        [(ngModel)]="ticket.seatNumber"
+        name="seatNumber"
+        placeholder="Enter seat number"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="busId">Bus ID:</label>
+      <input
+        type="number"
+        id="busId"
+        [(ngModel)]="ticket.bus.id"
+        name="busId"
+        placeholder="Enter Bus ID"
+        required
+        disabled
+      />
+    </div>
+
+    <button type="submit" class="submit-button">Book Ticket</button>
+  </form>
+</div>

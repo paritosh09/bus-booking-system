@@ -1,0 +1,91 @@
+.bus-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .filters {
+    margin-bottom: 20px;
+  }
+  
+  .filters input {
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .filters button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .filters button:hover {
+    background-color: #0056b3;
+  }
+  
+  .bus-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bus-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .bus-number {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .seat-availability {
+    font-size: 14px;
+    color: #28a745;
+  }
+  
+  .bus-details {
+    margin-bottom: 12px;
+  }
+  
+  .route {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .timings {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .actions button {
+    padding: 8px 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .actions button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .no-buses {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-top: 20px;
+  }

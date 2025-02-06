@@ -1,13 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { BusListComponent } from './bus-list/bus-list.component';
+import { BookTicketComponent } from './book-ticket/book-ticket.component';
+import { LoadingService } from './loader-service';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  selector: 'app-root' ,
+   templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'bus-booking-system';
+  title = 'Bus-Booking-App';
+  isLoading: boolean = true;
+  constructor(private loadingService: LoadingService) {
+    this.loadingService.isLoading$.subscribe((isLoading) => {
+      this.isLoading = isLoading;
+    });
+}
 }

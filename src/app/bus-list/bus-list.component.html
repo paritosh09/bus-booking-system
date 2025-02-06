@@ -1,0 +1,40 @@
+<div class="bus-list-container">
+  <h2>Available Buses</h2>
+
+  <!-- Search and Filters -->
+  <div class="filters">
+    <input type="text" [(ngModel)]="searchSource" placeholder="Search by Source" (input)="applyFilters()">
+    <input type="text" [(ngModel)]="searchDestination" placeholder="Search by Destination" (input)="applyFilters()">
+    <input type="time" [(ngModel)]="searchDepartureTime" (change)="applyFilters()">
+    <button (click)="clearFilters()">Clear Filters</button>
+  </div>
+
+  <!-- Bus List -->
+  <div class="bus-card" *ngFor="let bus of filteredBuses">
+    <div class="bus-header">
+      <span class="bus-number">{{ bus.busNumber }}</span>
+      <span class="seat-availability">{{ bus.availableSeats }} seats left</span>
+    </div>
+    <div class="bus-details">
+      <div class="route">
+        <span class="source">{{ bus.source }}</span>
+        <span class="arrow">→</span>
+        <span class="destination">{{ bus.destination }}</span>
+      </div>
+      <div class="timings">
+        <span class="departure">Dep: {{ bus.departureTime | date: 'shortTime' }}</span>
+        <span class="arrival">Arr: {{ bus.arrivalTime | date: 'shortTime' }}</span>
+      </div>
+    </div>
+    <div class="actions">
+      <button (click)="navigateToBooking(bus.id)" [disabled]="bus.availableSeats === 0">
+        {{ bus.availableSeats === 0 ? 'No Seats' : 'Book Now' }}
+      </button>
+    </div>
+  </div>
+
+  <!-- No Buses Found -->
+  <div *ngIf="filteredBuses.length === 0" class="no-buses">
+    <p>No buses found matching your criteria.</p>
+  </div>
+</div>
